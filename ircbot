@@ -7,7 +7,7 @@ channel = "#coding-n00bs"
 botnick = "Alcock"
 
 def ping():
-  ircsock.send (PONG "pingis \n")
+  ircsock.send ("PONG pingis\n")
 		
 def sendmsg(chan, msg):
   ircsock.send("PRIVMSG "+ chan +" :"+ msg +"\n")
