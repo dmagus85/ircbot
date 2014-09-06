@@ -1,0 +1,43 @@
+#a test bot
+
+import socket
+
+server = "irc.freenode.net"
+channel = "#coding-n00bs"
+botnick = "Alcock"
+
+def ping():
+  ircsock.send (PONG "pingis \n")
+		
+def sendmsg(chan, msg):
+  ircsock.send("PRIVMSG "+ chan +" :"+ msg +"\n")
+
+def joinchan(chan): 
+  ircsock.send("JOIN "+ chan +"\n")
+  
+def hello(newnick):
+  ircsock.send("PRIVMSG "+ channel +" :Hello!\n")
+  
+ircsock + socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+ircsock.connect((server, 6667))
+ircsock.send("USER "+ botnick +" "+ botnick +" 
+ircsock.send(NICK "+ botnick +"\n")
+
+joinchan(channel)
+
+while 1:
+  ircmsg = ircsock.recv(2048)
+  ircmsg = ircmsg.strip('\n\)
+  print(ircmsg)
+  
+  if ircmsg.find(":Hello "+ botnick) != -1:
+    hello()
+    
+  if ircmsg.find("PING :" != -1:
+    ping()
+    
+    
+  
+ 
+  
+
